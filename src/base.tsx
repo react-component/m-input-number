@@ -63,7 +63,7 @@ export default abstract class BaseComponent<
 
   autoStepTimer: any;
 
-  constructor(props: PropsType) {
+  constructor(props: P) {
     super(props as P);
 
     let value;
@@ -80,7 +80,7 @@ export default abstract class BaseComponent<
     } as S;
   }
 
-  componentWillReceiveProps(nextProps: PropsType) {
+  componentWillReceiveProps(nextProps: P) {
     if ('value' in nextProps) {
       const value = this.state.focused
         ? nextProps.value : this.getValidValue(nextProps.value);
@@ -100,7 +100,7 @@ export default abstract class BaseComponent<
   onChange(e: any) {
     const { parser, onChange } = this.props;
     const input = parser && parser(this.getValueFromEvent(e).trim());
-    this.setState({ inputValue: input } as StateType);
+    this.setState({ inputValue: input } as S);
     onChange && onChange(this.toNumberWhenUserInput(input)); // valid number or invalid string
   }
 
@@ -160,7 +160,7 @@ export default abstract class BaseComponent<
       this.setState({
         value: newValue,
         inputValue: this.toPrecisionAsStep(v),
-      } as StateType, callback);
+      } as S, callback);
     } else {
       // always set input value same as value
       this.setState({
