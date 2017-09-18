@@ -15,7 +15,6 @@ export interface PropsType extends BasePropsType {
   focusOnUpDown?: boolean;
   prefixCls?: string;
   tabIndex?: number;
-  readOnly?: boolean;
   upHandler?: React.ReactNode;
   downHandler?: React.ReactNode;
   formatter?: (v: any) => void;
@@ -149,7 +148,7 @@ export default class InputNumber extends BaseComponent<PropsType, StateType> {
     const inputDisplayValueFormat = this.formatWrapper(inputDisplayValue);
     const isUpDisabled = !!upDisabledClass || disabled || readOnly;
     const isDownDisabled = !!downDisabledClass || disabled || readOnly;
-    // ref for test
+
     return (
       <div
         className={classes}

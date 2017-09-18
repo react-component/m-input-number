@@ -27,6 +27,7 @@ const MAX_SAFE_INTEGER = Number.MAX_SAFE_INTEGER || Math.pow(2, 53) - 1;
 export interface PropsType {
   style?: any;
   onChange?: (e: any) => void;
+  readOnly?: boolean;
   disabled?: boolean;
   onFocus?: (e?: any) => void;
   onBlur?: (e: any) => void;
@@ -251,37 +252,23 @@ export default abstract class BaseComponent<
     return this.toNumber(num);
   }
 
-  upStep = (val: any, rat: any) => {
+  stepCompute = (type: 'up' | 'down', val: any, rat: any) => {
     const { step, min } = this.props;
     const precisionFactor = this.getPrecisionFactor(val, rat);
     const precision = Math.abs(this.getMaxPrecision(val, rat));
     let result;
+    const direct = type === 'up' ? 1 : -1;
     if (typeof val === 'number') {
       result =
-        ((precisionFactor * val + precisionFactor * +step * rat) /
+        ((precisionFactor * val + direct * precisionFactor * +step * rat) /
           precisionFactor).toFixed(precision);
     } else {
-      result = min === -Infinity ? step : min;
+      result = min === -Infinity ? direct * +step : min;
     }
     return this.toNumber(result);
   }
 
-  downStep = (val: any, rat: any) => {
-    const { step, min } = this.props;
-    const precisionFactor = this.getPrecisionFactor(val, rat);
-    const precision = Math.abs(this.getMaxPrecision(val, rat));
-    let result;
-    if (typeof val === 'number') {
-      result =
-        ((precisionFactor * val - precisionFactor * +step * rat) /
-          precisionFactor).toFixed(precision);
-    } else {
-      result = min === -Infinity ? -step : min;
-    }
-    return this.toNumber(result);
-  }
-
-  step = (type: any, e: any, ratio = 1) => {
+  step = (type: 'up' | 'down', e: any, ratio = 1) => {
     if (e) {
       e.preventDefault();
     }
@@ -293,7 +280,7 @@ export default abstract class BaseComponent<
     if (this.isNotCompleteNumber(value)) {
       return;
     }
-    let val = (this as any)[`${type}Step`](value, ratio);
+    let val = this.stepCompute(type, value, ratio);
     if (val > props.max) {
       val = props.max;
     } else if (val < props.min) {
@@ -311,25 +298,22 @@ export default abstract class BaseComponent<
     }
   }
 
-  down = (e: any, ratio?: any, recursive?: any) => {
+  action = (type: 'up' | 'down', e: any, ratio?: any, recursive?: any) => {
     if (e.persist) {
       e.persist();
     }
     this.stop();
-    this.step('down', e, ratio);
+    this.step(type, e, ratio);
     this.autoStepTimer = setTimeout(() => {
-      this.down(e, ratio, true);
+      this.action(type, e, ratio, true);
     }, recursive ? SPEED : DELAY);
   }
 
+  down = (e: any, ratio?: any, recursive?: any) => {
+    this.action('down', e, ratio, recursive);
+  }
+
   up = (e: any, ratio?: any, recursive?: any) => {
-    if (e.persist) {
-      e.persist();
-    }
-    this.stop();
-    this.step('up', e, ratio);
-    this.autoStepTimer = setTimeout(() => {
-      this.up(e, ratio, true);
-    }, recursive ? SPEED : DELAY);
+    this.action('up', e, ratio, recursive);
   }
 };

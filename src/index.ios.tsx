@@ -7,14 +7,6 @@ export interface PropsType extends BasePropsType {
   upStyle?: any;
   downStyle?: any;
   inputStyle?: any;
-  onChange?: () => void;
-  onFocus?: () => void;
-  onBlur?: () => void;
-  max?: number;
-  min?: number;
-  disabled?: boolean;
-  step?: number;
-  readOnly?: boolean;
   keyboardType?: any;
 }
 
