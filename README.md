@@ -86,18 +86,6 @@ react-native run-ios
           <td>Specifies the minimum value</td>
         </tr>
         <tr>
-          <td>onClick</td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>placeholder</td>
-          <td>string</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
           <td>max</td>
           <td>Number</td>
           <td></td>
@@ -138,18 +126,6 @@ react-native run-ios
           <td>Boolean</td>
           <td>false</td>
           <td>Specifies that an InputNumber is read only </td>
-        </tr>
-        <tr>
-          <td>name</td>
-          <td>String</td>
-          <td></td>
-          <td>Specifies the name of an InputNumber(`web only`)</td>
-        </tr>
-        <tr>
-          <td>id</td>
-          <td>String</td>
-          <td></td>
-          <td>Specifies the id of an InputNumber(`web only`)</td>
         </tr>
         <tr>
           <td>value</td>
