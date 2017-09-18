@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`basic base. 1`] = `
+<div
+  class="rmc-input-number"
+  style="width:100px;"
+>
+  <div
+    class="rmc-input-number-handler-wrap"
+  >
+    <span
+      aria-disabled="false"
+      aria-label="Increase Value"
+      class="rmc-input-number-handler rmc-input-number-handler-up "
+      role="button"
+      unselectable="true"
+    >
+      <span
+        class="rmc-input-number-handler-up-inner"
+        unselectable="true"
+      />
+    </span>
+    <span
+      aria-disabled="false"
+      aria-label="Decrease Value"
+      class="rmc-input-number-handler rmc-input-number-handler-down "
+      role="button"
+      unselectable="true"
+    >
+      <span
+        class="rmc-input-number-handler-down-inner"
+        unselectable="true"
+      />
+    </span>
+  </div>
+  <div
+    aria-valuemax="10"
+    aria-valuemin="-8"
+    class="rmc-input-number-input-wrap"
+    role="spinbutton"
+  >
+    <input
+      autocomplete="off"
+      class="rmc-input-number-input"
+      max="10"
+      min="-8"
+      step="1"
+      value=""
+    />
+  </div>
+</div>
+`;
