@@ -3,19 +3,19 @@ import { Text, TextInput, TouchableWithoutFeedback, View } from 'react-native';
 import BaseComponent, { PropsType as BasePropsType, StateType as BaseStateType } from './base';
 
 export interface PropsType extends BasePropsType {
-  styles: any;
-  upStyle: any;
-  downStyle: any;
-  inputStyle: any;
-  onChange: () => void;
-  onFocus: () => void;
-  onBlur: () => void;
-  max: number;
-  min: number;
-  disabled: boolean;
-  step: number;
-  readOnly: boolean;
-  keyboardType: any;
+  styles?: any;
+  upStyle?: any;
+  downStyle?: any;
+  inputStyle?: any;
+  onChange?: () => void;
+  onFocus?: () => void;
+  onBlur?: () => void;
+  max?: number;
+  min?: number;
+  disabled?: boolean;
+  step?: number;
+  readOnly?: boolean;
+  keyboardType?: any;
 }
 
 export interface StateType extends BaseStateType {
@@ -87,11 +87,11 @@ export default class InputNumber extends BaseComponent<PropsType, StateType> {
     const value = +state.value;
     if (!isNaN(value)) {
       const val = Number(value);
-      if (val >= props.max) {
+      if (val >= (props.max as number)) {
         upDisabledStyle = styles.stepDisabled;
         upDisabledTextStyle = styles.disabledStepTextColor;
       }
-      if (val <= props.min) {
+      if (val <= (props.min as number)) {
         downDisabledStyle = styles.stepDisabled;
         downDisabledTextStyle = styles.disabledStepTextColor;
       }

@@ -1,6 +1,6 @@
 {
   "name": "rmc-input-number",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "input-number ui component for react(web & react-native)",
   "keywords": [
     "react",
