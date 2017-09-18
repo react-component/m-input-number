@@ -10775,7 +10775,7 @@ var BaseComponent = function (_React$Component) {
             }
             return _this.toNumber(num);
         };
-        _this.upStep = function (val, rat) {
+        _this.stepCompute = function (type, val, rat) {
             var _this$props = _this.props,
                 step = _this$props.step,
                 min = _this$props.min;
@@ -10783,25 +10783,11 @@ var BaseComponent = function (_React$Component) {
             var precisionFactor = _this.getPrecisionFactor(val, rat);
             var precision = Math.abs(_this.getMaxPrecision(val, rat));
             var result = void 0;
+            var direct = type === 'up' ? 1 : -1;
             if (typeof val === 'number') {
-                result = ((precisionFactor * val + precisionFactor * +step * rat) / precisionFactor).toFixed(precision);
+                result = ((precisionFactor * val + direct * precisionFactor * +step * rat) / precisionFactor).toFixed(precision);
             } else {
-                result = min === -Infinity ? step : min;
-            }
-            return _this.toNumber(result);
-        };
-        _this.downStep = function (val, rat) {
-            var _this$props2 = _this.props,
-                step = _this$props2.step,
-                min = _this$props2.min;
-
-            var precisionFactor = _this.getPrecisionFactor(val, rat);
-            var precision = Math.abs(_this.getMaxPrecision(val, rat));
-            var result = void 0;
-            if (typeof val === 'number') {
-                result = ((precisionFactor * val - precisionFactor * +step * rat) / precisionFactor).toFixed(precision);
-            } else {
-                result = min === -Infinity ? -step : min;
+                result = min === -Infinity ? direct * +step : min;
             }
             return _this.toNumber(result);
         };
@@ -10819,7 +10805,7 @@ var BaseComponent = function (_React$Component) {
             if (_this.isNotCompleteNumber(value)) {
                 return;
             }
-            var val = _this[type + 'Step'](value, ratio);
+            var val = _this.stepCompute(type, value, ratio);
             if (val > props.max) {
                 val = props.max;
             } else if (val < props.min) {
@@ -10835,25 +10821,21 @@ var BaseComponent = function (_React$Component) {
                 clearTimeout(_this.autoStepTimer);
             }
         };
-        _this.down = function (e, ratio, recursive) {
+        _this.action = function (type, e, ratio, recursive) {
             if (e.persist) {
                 e.persist();
             }
             _this.stop();
-            _this.step('down', e, ratio);
+            _this.step(type, e, ratio);
             _this.autoStepTimer = setTimeout(function () {
-                _this.down(e, ratio, true);
+                _this.action(type, e, ratio, true);
             }, recursive ? SPEED : DELAY);
         };
+        _this.down = function (e, ratio, recursive) {
+            _this.action('down', e, ratio, recursive);
+        };
         _this.up = function (e, ratio, recursive) {
-            if (e.persist) {
-                e.persist();
-            }
-            _this.stop();
-            _this.step('up', e, ratio);
-            _this.autoStepTimer = setTimeout(function () {
-                _this.up(e, ratio, true);
-            }, recursive ? SPEED : DELAY);
+            _this.action('up', e, ratio, recursive);
         };
         var value = void 0;
         if ('value' in props) {
@@ -11084,7 +11066,6 @@ var InputNumber = function (_BaseComponent) {
             var inputDisplayValueFormat = this.formatWrapper(inputDisplayValue);
             var isUpDisabled = !!upDisabledClass || disabled || readOnly;
             var isDownDisabled = !!downDisabledClass || disabled || readOnly;
-            // ref for test
             return __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
                 'div',
                 { className: classes, style: props.style },
