@@ -158,7 +158,7 @@ export default class InputNumber extends BaseComponent<PropsType, StateType> {
           <InputHandler
             disabled={isUpDisabled}
             prefixCls={prefixCls}
-            unselectable
+            unselectable="unselectable"
             {...upEvents}
             role="button"
             aria-label="Increase Value"
@@ -166,7 +166,7 @@ export default class InputNumber extends BaseComponent<PropsType, StateType> {
             className={`${prefixCls}-handler ${prefixCls}-handler-up ${upDisabledClass}`}
           >
             {this.props.upHandler || <span
-              unselectable
+              unselectable="unselectable"
               className={`${prefixCls}-handler-up-inner`}
               onClick={preventDefault}
             />}
@@ -174,7 +174,7 @@ export default class InputNumber extends BaseComponent<PropsType, StateType> {
           <InputHandler
             disabled={isDownDisabled}
             prefixCls={prefixCls}
-            unselectable
+            unselectable="unselectable"
             {...downEvents}
             role="button"
             aria-label="Decrease Value"
@@ -182,7 +182,7 @@ export default class InputNumber extends BaseComponent<PropsType, StateType> {
             className={`${prefixCls}-handler ${prefixCls}-handler-down ${downDisabledClass}`}
           >
             {this.props.downHandler || <span
-              unselectable
+              unselectable="unselectable"
               className={`${prefixCls}-handler-down-inner`}
               onClick={preventDefault}
             />}
