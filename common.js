@@ -11074,13 +11074,13 @@ var InputNumber = function (_BaseComponent) {
                     { className: prefixCls + '-handler-wrap' },
                     __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
                         __WEBPACK_IMPORTED_MODULE_9__InputHandler__["a" /* default */],
-                        __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_extends___default()({ disabled: isUpDisabled, prefixCls: prefixCls, unselectable: true }, upEvents, { role: 'button', 'aria-label': 'Increase Value', 'aria-disabled': !!isUpDisabled, className: prefixCls + '-handler ' + prefixCls + '-handler-up ' + upDisabledClass }),
-                        this.props.upHandler || __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement('span', { unselectable: true, className: prefixCls + '-handler-up-inner', onClick: preventDefault })
+                        __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_extends___default()({ disabled: isUpDisabled, prefixCls: prefixCls, unselectable: 'unselectable' }, upEvents, { role: 'button', 'aria-label': 'Increase Value', 'aria-disabled': !!isUpDisabled, className: prefixCls + '-handler ' + prefixCls + '-handler-up ' + upDisabledClass }),
+                        this.props.upHandler || __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement('span', { unselectable: 'unselectable', className: prefixCls + '-handler-up-inner', onClick: preventDefault })
                     ),
                     __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
                         __WEBPACK_IMPORTED_MODULE_9__InputHandler__["a" /* default */],
-                        __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_extends___default()({ disabled: isDownDisabled, prefixCls: prefixCls, unselectable: true }, downEvents, { role: 'button', 'aria-label': 'Decrease Value', 'aria-disabled': !!isDownDisabled, className: prefixCls + '-handler ' + prefixCls + '-handler-down ' + downDisabledClass }),
-                        this.props.downHandler || __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement('span', { unselectable: true, className: prefixCls + '-handler-down-inner', onClick: preventDefault })
+                        __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_extends___default()({ disabled: isDownDisabled, prefixCls: prefixCls, unselectable: 'unselectable' }, downEvents, { role: 'button', 'aria-label': 'Decrease Value', 'aria-disabled': !!isDownDisabled, className: prefixCls + '-handler ' + prefixCls + '-handler-down ' + downDisabledClass }),
+                        this.props.downHandler || __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement('span', { unselectable: 'unselectable', className: prefixCls + '-handler-down-inner', onClick: preventDefault })
                     )
                 ),
                 __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
