@@ -46,19 +46,21 @@ export default class InputNumber extends BaseComponent<PropsType, StateType> {
     });
   }
 
-  onPressInDown(e: any) {
+  onPressInDown = (e: any) => {
     this.onPressIn('_stepDown');
     this.down(e, true);
   }
-  onPressOutDown() {
+  onPressOutDown = () => {
     this.onPressOut('_stepDown');
     this.stop();
   }
-  onPressInUp(e: any) {
+
+  onPressInUp = (e: any) => {
     this.onPressIn('_stepUp');
     this.up(e, true);
   }
-  onPressOutUp() {
+
+  onPressOutUp = () => {
     this.onPressOut('_stepUp');
     this.stop();
   }
