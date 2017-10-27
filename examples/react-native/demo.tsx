@@ -35,8 +35,8 @@ const styles = StyleSheet.create({
   },
 });
 
-class InputNumberDemo extends Component {
-  constructor(props) {
+export class InputNumberDemo extends Component<any, any> {
+  constructor(props: any) {
     super(props);
     this.state = {
       disabled: false,
@@ -45,24 +45,24 @@ class InputNumberDemo extends Component {
     };
   }
 
-  onChange = (v) => {
+  onChange = (v: any) => {
     console.log('onChange:', v);
     this.setState({
       value: v,
     });
-  };
+  }
 
   toggleDisabled = () => {
     this.setState({
       disabled: !this.state.disabled,
     });
-  };
+  }
 
   toggleReadOnly = () => {
     this.setState({
       readOnly: !this.state.readOnly,
     });
-  };
+  }
 
   render() {
     return (

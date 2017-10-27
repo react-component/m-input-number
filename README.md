@@ -49,6 +49,7 @@ ReactDOM.render(<InputNumber defaultValue={19}/>, container);
 
 ```
 npm install
+npm run watch-tsc
 npm start
 ```
 
@@ -61,7 +62,8 @@ online example: http://react-component.github.io/m-input-number/examples/
 ## react-native
 
 ```
-./node_modules/rc-tools run react-native-init
+npm run watch-tsc
+npm run rn-init
 react-native run-ios
 ```
 

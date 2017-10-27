@@ -4,7 +4,7 @@ import getList from 'react-native-index-page';
 
 getList({
   demos: [
-    require('./examples/react-native/demo')
+    require('./_ts2js/examples/react-native/demo')
   ],
   title: require('./package.json').name,
 });
