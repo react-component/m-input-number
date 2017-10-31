@@ -10695,6 +10695,15 @@ var BaseComponent = function (_React$Component) {
 
         var _this = __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_possibleConstructorReturn___default()(this, (BaseComponent.__proto__ || Object.getPrototypeOf(BaseComponent)).call(this, props));
 
+        _this.onChange = function (e) {
+            var _this$props = _this.props,
+                parser = _this$props.parser,
+                onChange = _this$props.onChange;
+
+            var input = parser && parser(_this.getValueFromEvent(e).trim());
+            _this.setState({ inputValue: input });
+            onChange && onChange(_this.toNumberWhenUserInput(input)); // valid number or invalid string
+        };
         _this.onFocus = function () {
             _this.setState({
                 focused: true
@@ -10838,9 +10847,9 @@ var BaseComponent = function (_React$Component) {
             return _this.toNumber(num);
         };
         _this.stepCompute = function (type, val, rat) {
-            var _this$props = _this.props,
-                step = _this$props.step,
-                min = _this$props.min;
+            var _this$props2 = _this.props,
+                step = _this$props2.step,
+                min = _this$props2.min;
 
             var precisionFactor = _this.getPrecisionFactor(val, rat);
             var precision = Math.abs(_this.getMaxPrecision(val, rat));
@@ -10929,17 +10938,6 @@ var BaseComponent = function (_React$Component) {
         key: 'componentWillUnmount',
         value: function componentWillUnmount() {
             this.stop();
-        }
-    }, {
-        key: 'onChange',
-        value: function onChange(e) {
-            var _props = this.props,
-                parser = _props.parser,
-                onChange = _props.onChange;
-
-            var input = parser && parser(this.getValueFromEvent(e).trim());
-            this.setState({ inputValue: input });
-            onChange && onChange(this.toNumberWhenUserInput(input)); // valid number or invalid string
         }
     }]);
 
