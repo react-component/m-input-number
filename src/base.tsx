@@ -97,7 +97,7 @@ export default abstract class BaseComponent<
 
   abstract getValueFromEvent(e: any): any
 
-  onChange(e: any) {
+  onChange = (e: any) => {
     const { parser, onChange } = this.props;
     const input = parser && parser(this.getValueFromEvent(e).trim());
     this.setState({ inputValue: input } as S);
