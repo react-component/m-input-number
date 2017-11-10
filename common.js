@@ -11087,7 +11087,7 @@ var InputNumber = function (_BaseComponent) {
             var downDisabledClass = '';
             var value = this.state.value;
 
-            if (value) {
+            if (value || value === 0) {
                 if (!isNaN(value)) {
                     var val = Number(value);
                     if (val >= max) {
