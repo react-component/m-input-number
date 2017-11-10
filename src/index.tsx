@@ -105,7 +105,7 @@ export default class InputNumber extends BaseComponent<PropsType, StateType> {
     let upDisabledClass = '';
     let downDisabledClass = '';
     const { value } = this.state;
-    if (value) {
+    if (value || value === 0) {
       if (!isNaN(value)) {
         const val = Number(value);
         if (val >= (max as number)) {
