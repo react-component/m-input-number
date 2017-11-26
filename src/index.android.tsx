@@ -1,1 +1,3 @@
-export default './index.ios';
+import Component from './index.ios';
+
+export default Component;
