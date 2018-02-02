@@ -274,13 +274,14 @@ export default abstract class BaseComponent<
     }
     const props = this.props;
     if (props.disabled) {
-      return;
+      return false;
     }
     const value = this.getCurrentValidValue(this.state.inputValue) || 0;
     if (this.isNotCompleteNumber(value)) {
-      return;
+      return false;
     }
     let val = this.stepCompute(type, value, ratio);
+    const outOfRange = val > props.max || val < props.min;
     if (val > props.max) {
       val = props.max;
     } else if (val < props.min) {
@@ -290,6 +291,7 @@ export default abstract class BaseComponent<
     this.setState({
       focused: true,
     });
+    return !outOfRange;
   }
 
   stop = () => {
@@ -303,10 +305,11 @@ export default abstract class BaseComponent<
       e.persist();
     }
     this.stop();
-    this.step(type, e, ratio);
-    this.autoStepTimer = setTimeout(() => {
-      this.action(type, e, ratio, true);
-    }, recursive ? SPEED : DELAY);
+    if (this.step(type, e, ratio)) {
+      this.autoStepTimer = setTimeout(() => {
+        this.action(type, e, ratio, true);
+      }, recursive ? SPEED : DELAY);
+    }
   }
 
   down = (e: any, ratio?: any, recursive?: any) => {
