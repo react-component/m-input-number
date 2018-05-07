@@ -14,13 +14,11 @@ export interface PropsType {
 export default class InputHandler extends Component<PropsType, {}> {
   render() {
     const {
-      prefixCls, disabled, onTouchStart, onTouchEnd, ...otherProps,
+      prefixCls, disabled, ...otherProps,
     } = this.props;
     return (
       <Touchable
         disabled={disabled}
-        onTouchStart={onTouchStart}
-        onTouchEnd={onTouchEnd}
         activeClassName={`${prefixCls}-handler-active`}
       >
         <span {...otherProps} />
