@@ -1,6 +1,6 @@
 {
   "name": "rmc-input-number",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "input-number ui component for react(web & react-native)",
   "keywords": [
     "react",
@@ -75,7 +75,7 @@
   "dependencies": {
     "babel-runtime": "6.x",
     "classnames": "^2.2.0",
-    "rmc-feedback": "^1.0.0"
+    "rmc-feedback": "^2.0.0"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.3",
