@@ -1,5 +1,5 @@
 /* eslint no-console:0 */
-import React, { Component } from 'react';
+import * as React from 'react';
 import {
   Platform,
   StyleSheet,
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export class InputNumberDemo extends Component<any, any> {
+export class InputNumberDemo extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {

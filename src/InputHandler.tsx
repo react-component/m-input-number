@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import Touchable from 'rmc-feedback';
 
 export interface PropsType {
@@ -11,10 +11,10 @@ export interface PropsType {
   unselectable?: boolean;
 }
 
-export default class InputHandler extends Component<PropsType, {}> {
+export default class InputHandler extends React.Component<PropsType, {}> {
   render() {
     const {
-      prefixCls, disabled, ...otherProps,
+      prefixCls, disabled, ...otherProps
     } = this.props;
     return (
       <Touchable
