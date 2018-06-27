@@ -79,6 +79,7 @@
     }
   },
   "dependencies": {
+    "babel-runtime": "6.x",
     "classnames": "^2.2.0",
     "rmc-feedback": "^2.0.0"
   },
@@ -90,7 +91,6 @@
     "@types/react": "^16.0.0",
     "@types/react-dom": "^16.0.0",
     "@types/react-native": "^0.55.0",
-    "babel-runtime": "6.x",
     "coveralls": "^2.13.1",
     "enzyme": "^2.9.1",
     "enzyme-to-json": "^1.5.1",
