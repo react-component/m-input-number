@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Text, TextInput, TouchableWithoutFeedback, View } from 'react-native';
 import BaseComponent, { PropsType as BasePropsType, StateType as BaseStateType } from './base';
 

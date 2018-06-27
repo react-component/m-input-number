@@ -13,11 +13,11 @@ exports[`basic base. 1`] = `
       aria-label="Increase Value"
       class="rmc-input-number-handler rmc-input-number-handler-up "
       role="button"
-      unselectable="unselectable"
+      unselectable="true"
     >
       <span
         class="rmc-input-number-handler-up-inner"
-        unselectable="unselectable"
+        unselectable="true"
       />
     </span>
     <span
@@ -25,11 +25,11 @@ exports[`basic base. 1`] = `
       aria-label="Decrease Value"
       class="rmc-input-number-handler rmc-input-number-handler-down "
       role="button"
-      unselectable="unselectable"
+      unselectable="true"
     >
       <span
         class="rmc-input-number-handler-down-inner"
-        unselectable="unselectable"
+        unselectable="true"
       />
     </span>
   </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 function noop() {
 }
@@ -30,7 +30,7 @@ export interface PropsType {
   readOnly?: boolean;
   disabled?: boolean;
   onFocus?: (e?: any) => void;
-  onBlur?: (e: any) => void;
+  onBlur?: (e: any, ...args: any[]) => void;
   max?: number;
   min?: number;
   step?: string | number;
