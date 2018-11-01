@@ -112,7 +112,7 @@ export default class InputNumber extends BaseComponent<PropsType, StateType> {
       inputDisplayValue = `${state.value}`;
     }
 
-    if (inputDisplayValue === undefined) {
+    if (inputDisplayValue === 'undefined') {
       inputDisplayValue = '';
     }
 
