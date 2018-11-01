@@ -106,7 +106,6 @@ export default class InputNumber extends BaseComponent<PropsType, StateType> {
     }
 
     let inputDisplayValue;
-
     if (state.focused) {
       inputDisplayValue = `${state.inputValue}`;
     } else {
