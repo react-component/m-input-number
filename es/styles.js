@@ -1,4 +1,5 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, ImageStyle, TextStyle, ViewStyle } from 'react-native';
+export { ImageStyle, TextStyle, ViewStyle };
 export default StyleSheet.create({
     container: {
         flex: 1,

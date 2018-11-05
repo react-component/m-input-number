@@ -23,6 +23,7 @@ const DELAY = 600;
  */
 const MAX_SAFE_INTEGER = Number.MAX_SAFE_INTEGER || Math.pow(2, 53) - 1;
 
+const RETURN_KEY_TYPE = 'done';
 
 export interface PropsType {
   style?: any;
@@ -39,6 +40,7 @@ export interface PropsType {
   value?: number;
   defaultValue?: number;
   autoFocus?: boolean;
+  returnKeyType?: string;
 }
 export interface StateType {
   value: number;
@@ -59,6 +61,7 @@ export default abstract class BaseComponent<
     onFocus: noop,
     onBlur: noop,
     parser: defaultParser,
+    returnKeyType: RETURN_KEY_TYPE,
   };
 
   autoStepTimer: any;

@@ -146,6 +146,7 @@ export default class InputNumber extends BaseComponent<PropsType, StateType> {
           onChange={this.onChange}
           underlineColorAndroid="transparent"
           keyboardType={props.keyboardType}
+          returnKeyType={props.returnKeyType}
         />
         <TouchableWithoutFeedback
           onPressIn={(editable && !upDisabledStyle) ? this.onPressInUp : undefined}

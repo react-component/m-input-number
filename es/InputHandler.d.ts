@@ -9,5 +9,5 @@ export interface PropsType {
     unselectable?: boolean;
 }
 export default class InputHandler extends Component<PropsType, {}> {
-    render(): JSX.Element;
+    render(): any;
 }

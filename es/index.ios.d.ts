@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import BaseComponent, { PropsType as BasePropsType, StateType as BaseStateType } from './base';
 export interface PropsType extends BasePropsType {
     styles?: any;
@@ -21,5 +20,5 @@ export default class InputNumber extends BaseComponent<PropsType, StateType> {
     onPressInUp: (e: any) => void;
     onPressOutUp: () => void;
     getValueFromEvent(e: any): any;
-    render(): JSX.Element;
+    render(): any;
 }

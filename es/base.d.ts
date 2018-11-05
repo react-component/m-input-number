@@ -16,6 +16,7 @@ export interface PropsType {
     value?: number;
     defaultValue?: number;
     autoFocus?: boolean;
+    returnKeyType?: string;
 }
 export interface StateType {
     value: number;
@@ -32,6 +33,7 @@ export default abstract class BaseComponent<P extends PropsType = PropsType, S e
         onFocus: typeof noop;
         onBlur: typeof noop;
         parser: typeof defaultParser;
+        returnKeyType: string;
     };
     autoStepTimer: any;
     constructor(props: P);

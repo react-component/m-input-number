@@ -24,6 +24,7 @@ export default class InputNumber extends BaseComponent<PropsType, StateType> {
         onFocus: () => void;
         onBlur: () => void;
         parser: (input: string) => string;
+        returnKeyType: string;
     };
     start: any;
     end: any;
@@ -36,5 +37,5 @@ export default class InputNumber extends BaseComponent<PropsType, StateType> {
     getValueFromEvent(e: any): any;
     focus(): void;
     formatWrapper(num: any): any;
-    render(): JSX.Element;
+    render(): any;
 }

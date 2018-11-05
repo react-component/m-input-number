@@ -20,6 +20,7 @@ var DELAY = 600;
  * The reason this is used, instead of Infinity is because numbers above the MSI are unstable
  */
 var MAX_SAFE_INTEGER = Number.MAX_SAFE_INTEGER || Math.pow(2, 53) - 1;
+var RETURN_KEY_TYPE = 'done';
 
 var BaseComponent = function (_React$Component) {
     _inherits(BaseComponent, _React$Component);
@@ -291,6 +292,7 @@ BaseComponent.defaultProps = {
     onChange: noop,
     onFocus: noop,
     onBlur: noop,
-    parser: defaultParser
+    parser: defaultParser,
+    returnKeyType: RETURN_KEY_TYPE
 };
 ;

@@ -141,7 +141,7 @@ var InputNumber = function (_BaseComponent) {
                         )
                     )
                 ),
-                React.createElement(TextInput, { style: [styles.input, inputDisabledStyle, inputStyle], value: inputDisplayValue, autoFocus: props.autoFocus, editable: editable, onFocus: this.onFocus, onEndEditing: this.onBlur, onChange: this.onChange, underlineColorAndroid: 'transparent', keyboardType: props.keyboardType }),
+                React.createElement(TextInput, { style: [styles.input, inputDisabledStyle, inputStyle], value: inputDisplayValue, autoFocus: props.autoFocus, editable: editable, onFocus: this.onFocus, onEndEditing: this.onBlur, onChange: this.onChange, underlineColorAndroid: 'transparent', keyboardType: props.keyboardType, returnKeyType: props.returnKeyType }),
                 React.createElement(
                     TouchableWithoutFeedback,
                     { onPressIn: editable && !upDisabledStyle ? this.onPressInUp : undefined, onPressOut: editable && !upDisabledStyle ? this.onPressOutUp : undefined, accessible: true, accessibilityLabel: 'Increase Value', accessibilityComponentType: 'button', accessibilityTraits: editable && !upDisabledStyle ? 'button' : 'disabled' },
