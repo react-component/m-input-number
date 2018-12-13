@@ -163,9 +163,9 @@ export default abstract class BaseComponent<
       } as S, callback);
     } else {
       // always set input value same as value
-      this.setState({
-        inputValue: this.toPrecisionAsStep(this.state.value),
-      }, callback);
+      this.setState(state => ({
+        inputValue: this.toPrecisionAsStep(state.value),
+      }), callback);
     }
     if (changed) {
       const { onChange } = this.props;
