@@ -99,7 +99,7 @@
     "react-dom": "^15.5.x",
     "react-native": "~0.42.0",
     "react-native-index-page": "^0.2.1",
-    "react-test-renderer": "^15.5.0",
+    "react-test-renderer": "^17.0.2",
     "stylelint-config-standard": "^17.0.0"
   },
   "typings": "./lib/index.d.ts",
